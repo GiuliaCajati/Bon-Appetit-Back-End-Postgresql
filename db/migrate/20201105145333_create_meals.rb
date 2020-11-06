@@ -6,6 +6,7 @@ class CreateMeals < ActiveRecord::Migration[6.0]
       t.integer :likes
       t.string :origin
       t.text :instructions
+      t.integer :user_id
 
       t.timestamps
     end

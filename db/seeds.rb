@@ -11,13 +11,22 @@ Ingredient.destroy_all
 MealIngredient.destroy_all 
 User.destroy_all 
 
+#####Test User#####
+bob = User.create(
+    name: "Bob",
+    password_digest: "password",
+    photo_url: "https://www.biography.com/.image/c_fill%2Ccs_srgb%2Cfl_progressive%2Ch_400%2Cq_auto:good%2Cw_620/MTIwNjA4NjMzOTU5NTgxMTk2/bob-ross-9464216-1-402.jpg"
+)
+
 ####### Meals ########
 hummus = Meal.create(
     name: "Hummus Platter", 
     photo_url:"https://i.imgur.com/WkjpPn7.jpeg",
     likes: 7,
     origin: "Lebanon",
-    instructions: "Place the garbanzo beans, tahini, lemon juice, salt and garlic in a blend until smooth. Drizzle olive oil, and sprinkle prinkle with paprika and parsley.")
+    instructions: "Place the garbanzo beans, tahini, lemon juice, salt and garlic in a blend until smooth. Drizzle olive oil, and sprinkle prinkle with paprika and parsley.",
+    user_id: bob.id    
+)
  
 
 brownie = Meal.create(
@@ -25,14 +34,18 @@ brownie = Meal.create(
     photo_url:"https://i.imgur.com/yRRGhva.jpg",
     likes: 10,
     origin: "North America",
-    instructions: "Preheat the oven to 325 degrees F (165 degrees C). Grease an 8x8 inch square pan. In a medium saucepan, combine the sugar, butter and water. Cook over medium heat until boiling. Remove from heat and stir in chocolate chips until melted and smooth. Mix in the eggs and vanilla. Combine the flour, baking soda and salt; stir into the chocolate mixture. Spread evenly into the prepared pan. Bake for 25 to 30 minutes in the preheated oven, until brownies set up. Do not overbake! Cool in pan and cut into squares.")
+    instructions: "Preheat the oven to 325 degrees F (165 degrees C). Grease an 8x8 inch square pan. In a medium saucepan, combine the sugar, butter and water. Cook over medium heat until boiling. Remove from heat and stir in chocolate chips until melted and smooth. Mix in the eggs and vanilla. Combine the flour, baking soda and salt; stir into the chocolate mixture. Spread evenly into the prepared pan. Bake for 25 to 30 minutes in the preheated oven, until brownies set up. Do not overbake! Cool in pan and cut into squares.",
+    user_id: bob.id  
+)
     
 burrito = Meal.create(
     name: "Hot Jalapeno Burrito",
     photo_url:"https://i.imgur.com/TF9ZrBd.jpeg",
     likes: 8,
     origin: "South America",
-    instructions: "Place the shredded potatoes in a bowl, cover with water, and set aside. Bring the onion, garlic, green chiles, and chicken broth to a boil in a saucepan over high heat. Reduce the heat to low, and simmer until the sauce thickens; turn off the heat. Place the tortillas between two damp paper towels. Microwave on High until warm, about 30 seconds.Step 5Spray a separate skillet with butter flavored cooking spray and cook the eggs over medium heat, whisking them continuously until the eggs are completely set; turn off the heat.")   
+    instructions: "Place the shredded potatoes in a bowl, cover with water, and set aside. Bring the onion, garlic, green chiles, and chicken broth to a boil in a saucepan over high heat. Reduce the heat to low, and simmer until the sauce thickens; turn off the heat. Place the tortillas between two damp paper towels. Microwave on High until warm, about 30 seconds.Step 5Spray a separate skillet with butter flavored cooking spray and cook the eggs over medium heat, whisking them continuously until the eggs are completely set; turn off the heat.",
+    user_id: bob.id  
+)   
 
 smoothie = Meal.create(
     name: "Kale & Pineapple Smoothie",
@@ -46,14 +59,18 @@ salad = Meal.create(
     photo_url:"https://i.imgur.com/PRYnyCi.jpg",
     likes: 6,
     origin: "South Korea",
-    instructions: "Combine shrimp, celery, onion, lemon juice, salt, pepper and one cup mayonnaise in a mixing bowl. Refrigerate and chill the shrimp mixture for at least one hour. Cut the tops off of the tomatoes and scoop out their insides; chill until the shrimp mixture is well chilled. Scoop the shrimp mixture into the hollowed out tomatoes. Serve.")
+    instructions: "Combine shrimp, celery, onion, lemon juice, salt, pepper and one cup mayonnaise in a mixing bowl. Refrigerate and chill the shrimp mixture for at least one hour. Cut the tops off of the tomatoes and scoop out their insides; chill until the shrimp mixture is well chilled. Scoop the shrimp mixture into the hollowed out tomatoes. Serve.",
+    user_id: bob.id  
+)
 
 philly_cheese_steak = Meal.create(
     name: "Philly Cheese Steak",
     photo_url:"https://i.imgur.com/A4HlHM1.jpg",
     likes: 10,
     origin: "North America",
-    instructions: "Add oil to a large non-stick skillet. Saute onions and 2 tablespoons of teriyaki sauce until the onions are soft. Add the sliced meat and cook until meat browns slightly, add remaining 1 tablespoon of teriyaki sauce and stir to combine. Place cheese on the meat and stir until melted, mixing meat, onions and cheese together. Scoop meat mixture onto sandwich rolls.")
+    instructions: "Add oil to a large non-stick skillet. Saute onions and 2 tablespoons of teriyaki sauce until the onions are soft. Add the sliced meat and cook until meat browns slightly, add remaining 1 tablespoon of teriyaki sauce and stir to combine. Place cheese on the meat and stir until melted, mixing meat, onions and cheese together. Scoop meat mixture onto sandwich rolls.",
+    user_id: bob.id  
+)
 
 eggplant_panini = Meal.create(
     name: "Roasted Eggplant Balsamic Panini",

@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_11_05_162247) do
     t.integer "likes"
     t.string "origin"
     t.text "instructions"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
