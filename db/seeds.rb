@@ -50,7 +50,7 @@ salad = Meal.create(
 
 philly_cheese_steak = Meal.create(
     name: "Philly Cheese Steak",
-    photo_url:"https://i.imgur.com/PRYnyCi.jpg",
+    photo_url:"https://i.imgur.com/A4HlHM1.jpg",
     likes: 10,
     origin: "North America",
     instructions: "Add oil to a large non-stick skillet. Saute onions and 2 tablespoons of teriyaki sauce until the onions are soft. Add the sliced meat and cook until meat browns slightly, add remaining 1 tablespoon of teriyaki sauce and stir to combine. Place cheese on the meat and stir until melted, mixing meat, onions and cheese together. Scoop meat mixture onto sandwich rolls.")
@@ -89,26 +89,114 @@ burrata= Meal.create(
 ######## Ingredients ########
 
 tomato= Ingredient.create(
-    name: "Tomato",
-    category: "Vegetable"
+    name: "Tomato"
+)
+
+sugar= Ingredient.create(
+    name: "Sugar"
 )
 
 oil= Ingredient.create(
-    name: "Olive Oil",
-    category: "Oil"
+    name: "Olive Oil"
 )
 
 salt= Ingredient.create(
-    name: "Salt",
-    category: "Spice"
+    name: "Salt"
 )
 
 bread= Ingredient.create(
-    name: "Bread",
-    category: "Carb"
+    name: "Bread"
 )
- 
+
+garbanzo_beans= Ingredient.create(
+    name: "Garbanzo Beans"
+)
+
+tahini= Ingredient.create(
+    name: "Tahini"
+)
+
+lemon_juice= Ingredient.create(
+    name: "Lemon Juice"
+)
+
+garlic= Ingredient.create(
+    name: "Garlic"
+)
+
+paprika= Ingredient.create(
+    name: "Paprika"
+)
+
+parsley= Ingredient.create(
+    name: "Parsley"
+)
+
+butter= Ingredient.create(
+    name: "Butter"
+)
+
+water= Ingredient.create(
+    name: "Water" 
+)
+
+chocolate_chips= Ingredient.create(
+    name: "Chocolate Chips" 
+)
+
+eggs= Ingredient.create(
+    name: "Eggs"
+)
+
+vanilla= Ingredient.create(
+    name: "Vanilla"
+)
+
+flour= Ingredient.create(
+    name: "All Purpose Flour"
+)
+
+baking_soda= Ingredient.create(
+    name: "Baking Soda" 
+)
+
+#########hummus#########
 MealIngredient.create(meal: hummus, ingredient: salt) 
 MealIngredient.create(meal: hummus, ingredient: oil) 
+MealIngredient.create(meal: hummus, ingredient: parsley )
+MealIngredient.create(meal: hummus, ingredient: paprika )
+MealIngredient.create(meal: hummus, ingredient: garlic )
+MealIngredient.create(meal: hummus, ingredient: lemon_juice )
+MealIngredient.create(meal: hummus, ingredient: tahini)
+MealIngredient.create(meal: hummus, ingredient: garbanzo_beans)
+
+#########brownie#########
+MealIngredient.create(meal: brownie , ingredient: salt) 
+MealIngredient.create(meal: brownie , ingredient: sugar) 
+MealIngredient.create(meal: brownie , ingredient: butter) 
+MealIngredient.create(meal: brownie , ingredient: water) 
+MealIngredient.create(meal: brownie , ingredient: chocolate_chips) 
+MealIngredient.create(meal: brownie , ingredient: eggs) 
+MealIngredient.create(meal: brownie , ingredient: vanilla) 
+MealIngredient.create(meal: brownie , ingredient: flour) 
+MealIngredient.create(meal: brownie , ingredient: baking_soda) 
+MealIngredient.create(meal: brownie , ingredient: salt) 
+
+#########burrito#########
+MealIngredient.create(meal: brownie , ingredient: salt) 
+#########smoothie#########    
+MealIngredient.create(meal: smoothie , ingredient: salt) 
+#########salad#########
+MealIngredient.create(meal: salad , ingredient: salt) 
+#########philly_cheese_steak#########
+MealIngredient.create(meal: philly_cheese_steak , ingredient: salt) 
+#########eggplant_panini#########
+MealIngredient.create(meal: eggplant_panini , ingredient: salt) 
+#########macaroons#########  
+MealIngredient.create(meal: macaroons , ingredient: salt) 
+#########ramen#########
+MealIngredient.create(meal: ramen , ingredient: salt) 
+#########burrata#########
+MealIngredient.create(meal: burrata , ingredient: salt) 
 
 
