@@ -6,13 +6,14 @@ class MealsController < ApplicationController
     end 
 
     def update 
-        @meal = Meal.find(params[:meal_id])
-        @meal.likes =(params[:meal_likes]) 
-        @meal.save 
+        @meal = Meal.find(params[:id])
+        @meal.update(likes: params[:likes]) 
         render json: @meal.to_json
     end 
 
     def show 
+        @meal = Meal.find(params[:id])
+        render json: @meal.to_json(include: :ingredients) 
     end 
 
     private
