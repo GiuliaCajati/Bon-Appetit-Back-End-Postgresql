@@ -1,18 +1,8 @@
 class UsersController < ApplicationController
 
-    # def show 
-    #     user = User.find_by(ame: params[:name])
-    #     photo_url = rails_blob_path(user.photo_url)
-    #     # Rails provides us a url that we can link to do — rails_blob_path
-    #     if user.password == params[:password]
-    #         render json: {user: user, photo_url: photo_url}
-    #     else
-    #         render json: {messge: "This user is not authenticated"}
-    # end 
-
-    def create 
+    def create
         #create user account 
-        @user = User.new(user_params)
+        @user = User.new(name: params[:user][:name], password_digest: params[:user][:password], photo_url: params[:user][:photo_url])
         if @user.save 
             #upon success... render json response 
             render json: @user.to_json 
@@ -20,9 +10,10 @@ class UsersController < ApplicationController
             #upon failure... render json response 
         end
         
+        
     end 
 
-    def login
+    def login 
         @user = User.find_by(name: params[:user][:name])
         if @user && @user.authenticate(params[:user][:password])
             #upon success... render json response  
@@ -38,5 +29,10 @@ class UsersController < ApplicationController
         render json: @user.to_json(include: [:meals])
     end 
 
+    private 
+
+    def user_params
+        params.require(:user).permit(:name, :password, :photo_url)
+    end 
 
 end
