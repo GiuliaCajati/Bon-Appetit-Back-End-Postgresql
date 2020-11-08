@@ -40,7 +40,7 @@ module BonAppetit
         resource(
           '*',
           headers: :any,
-          methods: [:get, :patch, :put, :delete, :post, :options]
+          methods: [:get, :patch, :put, :delete, :post, :options, :update]
           )
       end
     end

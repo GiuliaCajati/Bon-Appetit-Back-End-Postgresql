@@ -52,7 +52,9 @@ smoothie = Meal.create(
     photo_url:"https://i.imgur.com/OUwrpnJ.jpg",
     likes: 6,
     origin: "North America",
-    instructions: "Blend spinach, almond milk, peanut butter, chia seeds, and kale together in a blender until smooth. Add banana and blend until smooth.")
+    instructions: "Blend spinach, almond milk, peanut butter, chia seeds, and kale together in a blender until smooth. Add banana and blend until smooth.",
+    user_id: bob.id 
+)
       
 salad = Meal.create(
     name: "Seafood Salad",
