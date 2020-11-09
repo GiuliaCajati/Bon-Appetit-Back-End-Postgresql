@@ -8,23 +8,21 @@ class UsersController < ApplicationController
             render json: @user.to_json 
         else 
             #upon failure... render json response 
+            render json: {message: "This user is not authenticated"}
         end
     end 
 
     def show 
-        @user = User.find(params[:id])
-        render json: @user.to_json(include: [:meals])
+        @user = User.find_by(name: params[:user][:name])
+        user_url = rails_blob_path(user.photo_url)
+        debugger
+        if @user && @user.authenticate(params[:user][:password])
+            #upon success... render json response  
+            render json: @user.to_json(include: [:meals])
+        else
+            #upon failure... render json response 
+            render json: { message: "This user is not authenticated" }
+        end  
     end
-
-    # def login 
-    #     @user = User.find_by(name: params[:user][:name])
-    #     if @user && @user.authenticate(params[:user][:password])
-    #         #upon success... render json response  
-    #         render json: @user.to_json(include: [:meals])
-    #     else
-    #         flash.now[:message] = "Invalid username or password."
-    #         #upon failure... render json response 
-    #     end  
-    # end 
 
 end
