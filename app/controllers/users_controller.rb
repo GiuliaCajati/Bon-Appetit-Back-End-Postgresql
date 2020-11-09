@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
     def create
-        debugger
         #create user account 
         @user = User.new(name: params[:user][:name], password_digest: params[:user][:password], photo_url: params[:user][:photo_url])
         if @user.save 
