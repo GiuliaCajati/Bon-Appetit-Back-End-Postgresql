@@ -15,16 +15,14 @@ class UsersController < ApplicationController
 
     def login 
         @user = User.find_by(name: params[:user][:name])
-        
-        if @user.password == params[:password]
-            # @user && @user.authenticate(params[:user][:password])
+        if @user.password_digest == params[:password]
             #upon success... render json response  
             render json: @user.to_json(include: [:meals])
         else
             #upon failure... render json response 
             render json: { message: "This user is not authenticated" }
         end  
-        debugger
+
     end
 
 end
