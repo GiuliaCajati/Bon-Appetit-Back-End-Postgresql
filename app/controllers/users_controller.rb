@@ -9,30 +9,22 @@ class UsersController < ApplicationController
         else 
             #upon failure... render json response 
         end
-        
-        
-    end 
-
-    def login 
-        @user = User.find_by(name: params[:user][:name])
-        if @user && @user.authenticate(params[:user][:password])
-            #upon success... render json response  
-            render json: @user.to_json(include: [:meals])
-        else
-            flash.now[:message] = "Invalid username or password."
-            #upon failure... render json response 
-        end  
     end 
 
     def show 
         @user = User.find(params[:id])
         render json: @user.to_json(include: [:meals])
-    end 
+    end
 
-    private 
-
-    def user_params
-        params.require(:user).permit(:name, :password, :photo_url)
-    end 
+    # def login 
+    #     @user = User.find_by(name: params[:user][:name])
+    #     if @user && @user.authenticate(params[:user][:password])
+    #         #upon success... render json response  
+    #         render json: @user.to_json(include: [:meals])
+    #     else
+    #         flash.now[:message] = "Invalid username or password."
+    #         #upon failure... render json response 
+    #     end  
+    # end 
 
 end
