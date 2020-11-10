@@ -4,10 +4,11 @@ class CreateMeals < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :photo_url
       t.integer :likes
-      t.string :origin
       t.text :instructions
+      t.text :ingredients 
       t.integer :user_id
-
+      t.integer :origin_id
+      
       t.timestamps
     end
   end
