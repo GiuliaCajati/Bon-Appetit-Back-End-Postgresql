@@ -14,7 +14,12 @@ class MealsController < ApplicationController
     def show 
         @meal = Meal.find(params[:id])
         render json: @meal.to_json(include: :origin) 
-    end 
+    end
+    
+    def destroy
+        @meal = Meal.find(params[:id])
+        @meal.destroy
+    end
 
     private
 
