@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  resources :ingredients
+  resources :origins
   resources :meals
-  resources :meal_ingredients
+  
 
 
 

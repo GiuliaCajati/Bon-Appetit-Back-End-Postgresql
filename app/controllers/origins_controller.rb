@@ -1,4 +1,4 @@
-class OriginssController < ApplicationController
+class OriginsController < ApplicationController
 
 
 
