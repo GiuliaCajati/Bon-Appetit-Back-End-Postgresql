@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
     def create
         #create user account 
-        @user = User.new(name: params[:user][:name], password_digest: params[:user][:password], photo_url: params[:user][:photo_url])
+        @user = User.new(name: params[:user][:name], password_digest: params[:password], photo_url: params[:user][:photo_url])
+        # many need to change it from [:user][:pasword] to just [:password] 
         if @user.save 
             #upon success... render json response 
             render json: @user.to_json(include: [:meals])
