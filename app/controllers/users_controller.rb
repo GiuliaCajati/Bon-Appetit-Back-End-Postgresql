@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+    def show 
+        @user = User.find(params[:id])
+        render json: @user.to_json()
+    end
+
     def create
         #create user account 
         @user = User.new(name: params[:user][:name], password_digest: params[:password], photo_url: params[:user][:photo_url])
