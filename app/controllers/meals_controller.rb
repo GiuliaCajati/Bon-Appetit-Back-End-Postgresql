@@ -8,18 +8,19 @@ class MealsController < ApplicationController
     def update 
         @meal = Meal.find(params[:id])
         @meal.update(likes: params[:likes]) 
-        render json: @meal.to_json
+        render json: @meal.to_json(include: :origin) 
     end 
 
     def create 
         @meal = Meal.create(name: params[:meal][:name], 
-            photo_url: params[:meal], 
+            photo_url: params[:meal][:photo_url], 
             likes:0, 
             instructions: params[:meal][:instructions], 
             ingredients: params[:meal][:ingredients],
             user_id:params[:meal][:user_id], 
             origin_id:params[:meal][:origin_id])
-        render json: @meals.to_json(include: :origin) 
+        render json: @meal.to_json(include: :origin) 
+       # debugger
     end 
 
 
